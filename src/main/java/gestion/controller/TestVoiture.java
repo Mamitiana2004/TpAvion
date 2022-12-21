@@ -5,6 +5,8 @@ import gestion.km.ErrInfo;
 import gestion.km.Error;
 import gestion.km.Success;
 import gestion.model.Avion;
+import gestion.model.V_vehicule;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,7 +23,7 @@ public class TestVoiture {
 	public String getAll() {
 		Gson gson = new Gson();
 		try {
-				ArrayList list = new Avion().getAll();
+				ArrayList list = new V_vehicule().getAll();
 				return gson.toJson(new Success(list));
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
