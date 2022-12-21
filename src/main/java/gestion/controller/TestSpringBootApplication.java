@@ -18,7 +18,7 @@ import java.util.ArrayList;
 @CrossOrigin(origins={"*"})
 
 public class TestSpringBootApplication {
-	@GetMapping("/expiration")
+	@PostMapping("/expiration")
 	public String selectExpire(@RequestParam(name="mois")int moisExpiration){
 		try {
 			return new Gson().toJson(new Success(V_car_ins_del.getExpiring(moisExpiration)));
