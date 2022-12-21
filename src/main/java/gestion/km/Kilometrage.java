@@ -10,22 +10,14 @@ import gestion.gdao.genericdao.*;
 public class Kilometrage extends DBModel {
 
     @ColumnName(pk = true)
-    String idvehicule;
+    String idavion;
     @ColumnName()
     Date daty;
     @ColumnName()
     Double debut;
     @ColumnName()
     Double fin;
-
-    public String getIdvehicule() {
-        return idvehicule;
-    }
-
-    public void setIdvehicule(String idvehicule) {
-        this.idvehicule = idvehicule;
-    }
-
+    
     public Date getDaty() {
         return daty;
     }
@@ -48,5 +40,13 @@ public class Kilometrage extends DBModel {
 
     public void setFin(Double fin) {
         this.fin = fin;
+    }
+
+    public String getIdavion() {
+        return idavion;
+    }
+
+    public void setIdavion(String idavion) {
+        this.idavion = idavion;
     }
 }

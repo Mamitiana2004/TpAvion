@@ -62,7 +62,7 @@ public class TestSpringBootApplication {
 				throw new Exception("session expired");
 			else {
 				Kilometrage km = new Kilometrage();
-				km.setIdvehicule(name);
+				km.setIdavion(name);
 				DateFormat df = new SimpleDateFormat("dd/MM/yyyy");
 				km.setDaty(df.parse(date));
 				km.delete();
