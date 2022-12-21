@@ -14,7 +14,7 @@ import gestion.km.Success;
 import gestion.model.V_vehicule;
 
 @SpringBootApplication(scanBasePackages={"gestion.controller"})
-@CrossOrigin(origins={"http://localhost:3001/","http://localhost:3000/","http://localhost:80/kilometrage/*"})
+@CrossOrigin(origins={"*"})
 public class KiloApplication {
 	
 	public static void main(String[] args) {

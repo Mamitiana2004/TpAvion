@@ -15,7 +15,7 @@ import java.util.ArrayList;
 @RestController
 @SpringBootApplication
 @RequestMapping("/km")
-@CrossOrigin(origins={"http://localhost:3001/","http://localhost:3000/","http://localhost:80/kilometrage/*"})
+@CrossOrigin(origins={"*"})
 
 public class TestSpringBootApplication {
 	@GetMapping("/expiration")

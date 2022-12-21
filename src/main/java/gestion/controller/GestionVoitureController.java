@@ -22,13 +22,12 @@ import gestion.km.OwnResponse;
 import gestion.km.Success;
 import gestion.km.Token;
 import gestion.model.V_vehicule;
-import javax.servlet.http.HttpServletRequest;
 
 
 @RestController
 @RequestMapping("/car")
 @SpringBootApplication
-@CrossOrigin(origins={"http://localhost:3001/","http://localhost:3000/","http://localhost:80/kilometrage/*"})
+@CrossOrigin(origins={"*"})
 public class GestionVoitureController {
 	@GetMapping()
 	public String getAll(@RequestHeader(name="authorization") String token)  throws Exception{
@@ -52,10 +51,10 @@ public class GestionVoitureController {
 		return String.format("Hello my lovely %s!", name);
 	}
 	@PostMapping("/connect")
-    public OwnResponse connect (@RequestParam(name = "email")String email , @RequestParam(name="mdp")String mdp ,HttpServletRequest req)
+    public OwnResponse connect (@RequestParam(name = "email")String email , @RequestParam(name="mdp")String mdp)
     {
         try {
-            String url=req.getRequestURL().toString();
+            String url=email+mdp;
 			Token data=Administrator.connection(email, mdp,url);
 			if(data!=null)
 			return new Success(data);

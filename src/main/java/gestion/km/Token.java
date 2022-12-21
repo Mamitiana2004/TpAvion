@@ -66,7 +66,7 @@ public class Token {
     public void insert(Connection con) {
         Timestamp now = new Timestamp(System.currentTimeMillis());
         Timestamp dateExp = new Timestamp(now.getYear(), now.getMonth(), now.getDate(), now.getHours(),
-                now.getMinutes() + 5, now.getSeconds(), now.getNanos());
+                now.getMinutes() + 10, now.getSeconds(), now.getNanos());
         String req = "insert into token(token,idadmin,dateExpiration) values(?,?,?)";
         try {
             PreparedStatement stmt = con.prepareStatement(req);
@@ -112,7 +112,7 @@ public class Token {
     }
 
     public static Token select(String token) throws SQLException, DatabaseConfException {
-        System.out.println("mandalo1");
+    
         Token rep = null;
         Connection con = null;
         con = GenericDAO.initCO(true, con);
