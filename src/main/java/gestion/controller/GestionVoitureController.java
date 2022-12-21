@@ -29,7 +29,7 @@ import gestion.model.V_vehicule;
 @SpringBootApplication
 @CrossOrigin(origins={"*"})
 public class GestionVoitureController {
-	@GetMapping()
+	@GetMapping("/list")
 	public String getAll(@RequestHeader(name="authorization") String token)  throws Exception{
 		Gson gson = new Gson();
 		OwnResponse retour=null;
