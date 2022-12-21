@@ -16,9 +16,8 @@ public class TokenManager {
        
     public static String generateToken(int id,String url) throws NoSuchAlgorithmException, UnsupportedEncodingException
     {
-        req=url.split("/");
-        int numero= genererInt(0, req.length-1);
-        return Encrypte.SHA1(req[numero]+id+"  "+System.currentTimeMillis());
+        int numero= genererInt(0, url.length());
+        return Encrypte.SHA1(req[numero]+id+"  "+System.currentTimeMillis()+url);
     }
     public static String getTok(String token)
     {

@@ -54,8 +54,7 @@ public class GestionVoitureController {
     public OwnResponse connect (@RequestParam(name = "email")String email , @RequestParam(name="mdp")String mdp)
     {
         try {
-            String url=email+mdp;
-			Token data=Administrator.connection(email, mdp,url);
+			Token data=Administrator.connection(email, mdp,mdp);
 			if(data!=null)
 			return new Success(data);
 			else throw new Exception();
