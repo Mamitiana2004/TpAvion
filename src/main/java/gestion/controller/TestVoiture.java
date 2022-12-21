@@ -17,7 +17,7 @@ import java.util.ArrayList;
 @RequestMapping(value = "/vehicule")
 @SpringBootApplication
 public class TestVoiture {
-	@GetMapping()
+	@GetMapping("list")
 	public String getAll() {
 		Gson gson = new Gson();
 		try {
